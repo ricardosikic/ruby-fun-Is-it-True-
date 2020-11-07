@@ -5,15 +5,15 @@ def is_it_true(exp)
   newArr.each_with_index do |item, index|
     if item === '='
       findSign = newArr.find_index('=')
-    elsif item === "<"
+    elsif item === '<'
       findSign = newArr.find_index('<')
-    elsif item === ">"
+    elsif item === '>'
       findSign = newArr.find_index('>')
     end
   end
 
   firstNum = newArr.slice(0, findSign).join('').to_i
-  secondNum = newArr.slice(findSign + 1, newArr.size).join('').to_i
+  secondNum = newArr.slice(findSign + 1, newArr.length()).join('').to_i
   sign = newArr[findSign]
   
   if sign === '='
@@ -27,10 +27,4 @@ def is_it_true(exp)
 end
 
 
-is_it_true("5>13")
-
-#is_it_true("8<7") ➞ false
-#is_it_true("5=13") ➞ false
-#is_it_true("15>4") ➞ true
-
-#three types of relations: =, >, and <
+is_it_true("5=13")
